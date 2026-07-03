@@ -1,84 +1,139 @@
-const words = ["CAT", "DOG", "SUN", "PEN", "BAT"];
+document.addEventListener("DOMContentLoaded", () => {
 
-const wordEl = document.getElementById("word");
-const lettersEl = document.getElementById("letters");
-const msgEl = document.getElementById("msg");
-const ctaEl = document.getElementById("cta");
-const boardEl = document.querySelector(".board");
+    // Word list
+    const words = [
+        "CAT",
+        "DOG",
+        "SUN",
+        "PEN",
+        "BAT"
+    ];
 
-console.log({
-    wordEl,
-    lettersEl,
-    msgEl,
-    ctaEl,
-    boardEl
-});
+    // Elements
+    const wordEl = document.getElementById("word");
+    const lettersEl = document.getElementById("letters");
+    const msgEl = document.getElementById("msg");
+    const ctaEl = document.getElementById("cta");
+    const boardEl = document.querySelector(".board");
 
-const current = words[Math.floor(Math.random() * words.length)];
-const missing = 1;
-const correct = current[missing];
+    // Safety check
+    if (!wordEl || !lettersEl || !msgEl || !ctaEl || !boardEl) {
+        console.error("Banner elements not found.");
+        return;
+    }
 
-wordEl.innerHTML = `${current[0]} _ ${current[2]}`;
+    // Pick a random word
+    const current = words[Math.floor(Math.random() * words.length)];
 
-const options = [
-    correct,
-    ...["A", "E", "I", "O", "U", "B", "D", "N", "T"].filter(l => l !== correct)
-]
-.sort(() => Math.random() - 0.5)
-.slice(0, 3)
-.sort(() => Math.random() - 0.5);
+    // Hide the middle letter
+    const missingIndex = 1;
+    const correctLetter = current[missingIndex];
 
-lettersEl.innerHTML = "";
+    // Display word
+    wordEl.innerHTML =
+        current.substring(0, missingIndex) +
+        " _ " +
+        current.substring(missingIndex + 1);
 
-options.forEach(letter => {
-    const btn = document.createElement("button");
-    btn.textContent = letter;
+    // Alphabet
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-    btn.addEventListener("click", () => {
+    // Remove the correct letter
+    const availableWrongLetters = alphabet.filter(letter => letter !== correctLetter);
 
-        if (letter === correct) {
+    // Pick TWO random wrong letters
+    const wrongLetters = [];
 
-            wordEl.innerHTML = current;
+    while (wrongLetters.length < 2) {
 
-            msgEl.textContent = "🎉 Correct!";
+        const randomLetter =
+            availableWrongLetters[
+                Math.floor(Math.random() * availableWrongLetters.length)
+            ];
 
-            ctaEl.style.display = "inline-block";
+        if (!wrongLetters.includes(randomLetter)) {
+            wrongLetters.push(randomLetter);
+        }
+    }
 
-            lettersEl.innerHTML = "";
+    // Always include the correct answer
+    const options = [
+        correctLetter,
+        wrongLetters[0],
+        wrongLetters[1]
+    ];
 
-            for (let i = 0; i < 30; i++) {
+    // Shuffle
+    options.sort(() => Math.random() - 0.5);
 
-                const confetti = document.createElement("div");
+    console.log("Word:", current);
+    console.log("Correct:", correctLetter);
+    console.log("Options:", options);
 
-                confetti.className = "confetti";
+    // Create buttons
+    lettersEl.innerHTML = "";
 
-                confetti.style.left = (80 + Math.random() * 180) + "px";
+    options.forEach(letter => {
 
-                confetti.textContent = ["🎉", "✨", "🎊"][i % 3];
+        const btn = document.createElement("button");
 
-                boardEl.appendChild(confetti);
+        btn.textContent = letter;
 
-                setTimeout(() => confetti.remove(), 2000);
+        btn.addEventListener("click", () => {
+
+            if (letter === correctLetter) {
+
+                wordEl.innerHTML = current;
+
+                msgEl.innerHTML = "🎉 Correct!";
+
+                ctaEl.style.display = "inline-block";
+
+                lettersEl.innerHTML = "";
+
+                // Confetti
+                for (let i = 0; i < 25; i++) {
+
+                    const confetti = document.createElement("div");
+
+                    confetti.className = "confetti";
+
+                    confetti.style.left = Math.random() * 260 + "px";
+
+                    confetti.style.top = "0px";
+
+                    confetti.textContent = ["🎉", "✨", "🎊"][Math.floor(Math.random() * 3)];
+
+                    boardEl.appendChild(confetti);
+
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 2000);
+                }
+
+            } else {
+
+                msgEl.innerHTML = "❌ Try Again!";
+
+                boardEl.classList.add("shake");
+
+                setTimeout(() => {
+                    boardEl.classList.remove("shake");
+                }, 400);
+
             }
 
-        } else {
+        });
 
-            msgEl.textContent = "❌ Try Again!";
-
-            boardEl.classList.add("shake");
-
-            setTimeout(() => {
-                boardEl.classList.remove("shake");
-            }, 400);
-
-        }
+        lettersEl.appendChild(btn);
 
     });
 
-    lettersEl.appendChild(btn);
+    // CTA
+    ctaEl.addEventListener("click", () => {
 
-});
+        window.open("https://ishtiaqali.com", "_blank");
 
-ctaEl.addEventListener("click", () => {
-    window.open("https://ishtiaqali.com", "_blank");
+    });
+
 });
