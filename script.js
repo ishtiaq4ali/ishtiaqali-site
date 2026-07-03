@@ -6,6 +6,14 @@ const msgEl = document.getElementById("msg");
 const ctaEl = document.getElementById("cta");
 const boardEl = document.querySelector(".board");
 
+console.log({
+    wordEl,
+    lettersEl,
+    msgEl,
+    ctaEl,
+    boardEl
+});
+
 const current = words[Math.floor(Math.random() * words.length)];
 const missing = 1;
 const correct = current[missing];
