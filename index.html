@@ -250,12 +250,32 @@ h1{margin:10px 0 0;color:#118c3e;font-size:46px}p{margin:5px 0;font-weight:bold}
 
 }
   .hint{color:black}
+  .desktop-banner{
+    display:block;
+}
+
+.mobile-banner{
+    display:none;
+}
+  @media (max-width:768px){
+
+    .desktop-banner{
+        display:none;
+    }
+
+    .mobile-banner{
+        display:block;
+    }
+
+}
 </style>
 
 </head>
 
 <body>
-<div class="banner" style="margin:0 auto; text-align:center; padding:10px">
+<div class="banner desktop-banner">
+
+    <div class="banner" style="margin:0 auto; text-align:center; padding:10px">
  <!--  <div class="left"><div class="logo">NIDO</div><h1>Spelling Whiz</h1><p>Boost Learning Power Everyday!</p></div>-->
     <div class="board">
       <div id="word" class="word"></div>
@@ -266,6 +286,26 @@ h1{margin:10px 0 0;color:#118c3e;font-size:46px}p{margin:5px 0;font-weight:bold}
       </div>
     
   </div>
+
+</div>
+
+<div class="banner mobile-banner">
+
+   <div class="banner" style="margin:0 auto; text-align:center; padding:10px">
+ <!--  <div class="left"><div class="logo">NIDO</div><h1>Spelling Whiz</h1><p>Boost Learning Power Everyday!</p></div>-->
+    <div class="board">
+      <div id="word" class="word"></div>
+        <div id="hint"  class="hint">Tap the missing letter!</div>
+          <div id="letters" class="letters"></div>
+          <div id="msg"></div>
+        <button id="cta" class="cta" style="display:none">Learn More</button>
+      </div>
+    
+  </div>
+
+</div>
+  
+
 <!-- NAV -->
 <div class="nav">
   <div class="logo">Ishtiaq Ali</div>
