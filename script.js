@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const msgEl = document.getElementById("msg");
     const ctaEl = document.getElementById("cta");
     const boardEl = document.querySelector(".board");
-
+    const hintEl = document.getElementById("hint");
     // Safety check
     if (!wordEl || !lettersEl || !msgEl || !ctaEl || !boardEl) {
         console.error("Banner elements not found.");
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 wordEl.innerHTML = current;
 
                 msgEl.innerHTML = "🎉 Correct!";
+                hintEl.style.display = "none";
 
                 ctaEl.style.display = "inline-block";
 
