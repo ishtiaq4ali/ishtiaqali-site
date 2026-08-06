@@ -1,0 +1,661 @@
+/*==================================================
+Digital Operations
+Module A
+Layout Foundation
+==================================================*/
+
+/*==================================================
+SECTION
+==================================================*/
+
+.operations-platform{
+
+    position:relative;
+
+    overflow:hidden;
+    padding:40px;
+
+}
+
+/*==================================================
+SECTION HEADING
+==================================================*/
+
+.operations-platform .section-heading{
+
+    max-width:760px;
+
+    margin:0 auto 2.5rem;
+
+    text-align:center;
+
+}
+
+.operations-platform .section-heading p{
+
+    max-width:680px;
+
+    margin:1.75rem auto 0;
+
+}
+
+/*==================================================
+OPERATIONS DIAGRAM
+==================================================*/
+
+.operations-diagram{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-bottom:3rem;
+
+}
+
+.operations-core{
+
+    width:100%;
+
+    max-width:760px;
+
+    text-align:center;
+
+    padding:2.5rem;
+
+}
+
+.core-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.55rem 1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.operations-core h3{
+
+    margin-bottom:1.25rem;
+
+}
+
+.operations-core p{
+
+    max-width:620px;
+
+    margin:0 auto;
+
+}
+
+
+
+/*==================================================
+OPERATIONS BOARD
+==================================================*/
+
+.operations-board{
+
+    max-width:1240px;
+
+    margin:0 auto;
+
+}
+
+/*==================================================
+OPERATION ROW
+==================================================*/
+
+.operation-card{
+
+    display:grid;
+
+    grid-template-columns:
+
+        90px
+
+        minmax(300px,1.2fr)
+
+        1fr;
+
+    align-items:center;
+
+    column-gap:2rem;
+
+    padding:1.5rem 2rem;
+
+}
+
+.operation-number{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+.operation-content h3{
+
+    margin-bottom:.5rem;
+
+}
+
+.operation-content p{
+
+    margin:0;
+
+}
+
+.operation-preview{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+}
+
+.operation-arrow{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    font-size:1.5rem;
+
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.operations-footer{
+
+    max-width:760px;
+
+    margin:6rem auto 0;
+
+    text-align:center;
+
+}
+
+.operations-footer h3{
+
+    margin-bottom:1.5rem;
+
+}
+
+.operations-footer p{
+
+    max-width:620px;
+
+    margin:0 auto;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:992px){
+
+    .operation-card{
+
+        grid-template-columns:70px 1fr;
+
+        row-gap:1.5rem;
+
+    }
+
+    .operation-preview{
+
+        grid-column:2;
+
+    }
+
+    .operation-arrow{
+
+        display:none;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .operations-core{
+
+        padding:2rem;
+
+    }
+
+    .operations-flow span{
+
+        height:50px;
+
+    }
+
+    .operation-card{
+
+        grid-template-columns:1fr;
+
+        row-gap:1rem;
+
+    }
+
+    .operation-number{
+
+        font-size:1rem;
+
+    }
+
+    .operation-preview{
+
+        grid-column:auto;
+
+    }
+
+    .operations-footer{
+
+        margin-top:4rem;
+
+    }
+
+}
+
+/*==================================================
+Module B
+Executive Operations Board
+==================================================*/
+
+/*==================================================
+OPERATIONS BOARD
+==================================================*/
+
+.operations-board{
+
+    position:relative;
+
+    border:1px solid var(--border-subtle);
+
+    border-radius:var(--radius-xl);
+
+    background:rgba(255,255,255,.02);
+
+    backdrop-filter:blur(24px);
+
+    overflow:hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.30);
+
+}
+
+/*==================================================
+ROW
+==================================================*/
+
+.operation-card{
+
+    position:relative;
+
+    transition:
+        background .35s ease,
+        transform .35s ease;
+
+}
+
+.operation-card:not(:last-child){
+
+    border-bottom:1px solid var(--border-subtle);
+
+}
+
+/*==================================================
+LEFT ACTIVE BAR
+==================================================*/
+
+.operation-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:4px;
+
+    height:0;
+
+    border-radius:0 6px 6px 0;
+
+    background:var(--primary);
+
+    transition:.35s ease;
+
+}
+
+.operation-card:hover::before{
+
+    height:68%;
+
+}
+
+/*==================================================
+ROW HOVER
+==================================================*/
+
+.operation-card:hover{
+
+    background:rgba(255,255,255,.035);
+
+}
+
+.operation-card:hover .operation-arrow{
+
+    transform:translateX(8px);
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+NUMBER
+==================================================*/
+
+.operation-number{
+
+    color:var(--primary);
+
+    opacity:.55;
+
+    font-size:1.6rem;
+    opacity:.35;
+
+    font-weight:700;
+
+    letter-spacing:-.03em;
+
+    transition:.3s ease;
+
+}
+
+.operation-card:hover .operation-number{
+
+    opacity:0.8;
+
+}
+
+/*==================================================
+TITLE
+==================================================*/
+
+.operation-content h3{
+
+    margin:0 0 .6rem;
+
+    font-size:1.35rem;
+
+    transition:.3s ease;
+
+}
+
+.operation-card:hover h3{
+
+    color:var(--primary);
+
+}
+
+.operation-content p{
+
+    color:var(--text-secondary);
+
+    font-size:.95rem;
+
+}
+
+/*==================================================
+PREVIEW TAGS
+==================================================*/
+
+.operation-preview{
+
+    justify-content:flex-start;
+
+}
+
+.operation-preview span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:.55rem 1rem;
+
+    border:1px solid var(--border-subtle);
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.03);
+
+    color:var(--text-secondary);
+
+    font-size:.82rem;
+
+    transition:.3s ease;
+
+}
+
+.operation-card:hover .operation-preview span{
+
+    background:rgba(91,108,255,.08);
+
+    border-color:rgba(91,108,255,.18);
+
+    color:var(--text-primary);
+
+}
+
+/*==================================================
+ARROW
+==================================================*/
+
+.operation-arrow{
+
+    color:var(--text-muted);
+
+    font-size:2rem;
+
+    transition:.35s ease;
+
+}
+
+/*==================================================
+CORE
+==================================================*/
+
+.operations-core{
+
+    position:relative;
+
+    border:1px solid var(--border-subtle);
+
+    border-radius:var(--radius-xl);
+
+    background:rgba(255,255,255,.02);
+
+    backdrop-filter:blur(24px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+
+}
+
+.core-badge{
+
+    border-radius:999px;
+
+    border:1px solid rgba(91,108,255,.18);
+
+    background:rgba(91,108,255,.08);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    letter-spacing:.06em;
+
+    text-transform:uppercase;
+
+}
+
+.operations-core h3{
+
+    font-size:2rem;
+
+    margin-bottom:1rem;
+
+}
+
+.operations-core p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.operations-footer{
+
+    padding-top:4rem;
+
+}
+
+.operations-footer h3{
+
+    font-size:2rem;
+
+}
+
+.operations-footer p{
+
+    color:var(--text-secondary);
+
+}
+
+/*==================================================
+BOARD HEADER
+==================================================*/
+
+.operations-board-header{
+
+    text-align:center;
+
+    padding:3rem 3rem 2.5rem;
+
+    border-bottom:1px solid var(--border-subtle);
+
+}
+
+.board-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.45rem 1rem;
+
+    margin-bottom:1.25rem;
+
+    border-radius:999px;
+
+    background:rgba(91,108,255,.08);
+
+    border:1px solid rgba(91,108,255,.18);
+
+    color:var(--primary);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+}
+
+.operations-board-header h3{
+
+    margin-bottom:1rem;
+
+}
+
+.operations-board-header p{
+
+    max-width:720px;
+
+    margin:0 auto;
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+LIGHT THEME
+==================================================*/
+
+[data-theme="light"] .operations-platform{
+
+    background:var(--section-surface-secondary);
+
+}
+
+[data-theme="light"] .operations-board,
+[data-theme="light"] .operations-core{
+
+    background:var(--section-panel-soft);
+
+    border-color:var(--section-border);
+
+    box-shadow:var(--section-shadow);
+
+}
+
+[data-theme="light"] .operation-card:hover{
+
+    background:rgba(91,108,255,.045);
+
+}
+
+[data-theme="light"] .operation-preview span{
+
+    background:#F8FAFC;
+
+    border-color:var(--section-border);
+
+    color:var(--text-secondary);
+
+}

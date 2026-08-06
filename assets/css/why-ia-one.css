@@ -1,0 +1,276 @@
+/*==================================================
+WHY IshtiaqAli.com
+==================================================*/
+
+.why-ia-one{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#0F172A;
+
+    padding-block:var(--section-padding);
+
+}
+
+.why-ia-one .section-header{
+
+    max-width:760px;
+
+    margin:0 auto 4rem;
+
+    text-align:center;
+
+}
+
+.why-layout{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+    margin-bottom:4rem;
+
+}
+
+.comparison-card{
+
+    background:#162133;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:2rem;
+
+    transition:.3s ease;
+
+}
+
+.comparison-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+}
+
+.comparison-card.featured{
+
+    background:#2563EB;
+
+}
+
+.comparison-label{
+
+    display:inline-block;
+
+    margin-bottom:1.5rem;
+
+    font-size:.8rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    color:#94A3B8;
+
+}
+
+.featured .comparison-label{
+
+    color:#EAF3FF;
+
+}
+
+.comparison-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.comparison-list li{
+
+    padding:1rem 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    color:#F8FAFC;
+
+}
+
+.comparison-list li:last-child{
+
+    border:none;
+
+}
+
+.comparison-footer{
+
+    margin-top:1.75rem;
+
+    color:#94A3B8;
+
+    line-height:1.7;
+
+}
+
+.featured .comparison-footer{
+
+    color:#EAF3FF;
+
+}
+
+.why-metrics{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.25rem;
+
+}
+
+.why-metric{
+
+    padding:1.5rem;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:#162133;
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+.why-metric strong{
+
+    display:block;
+
+    font-size:2.2rem;
+
+    color:#fff;
+
+    margin-bottom:.5rem;
+
+}
+
+.why-metric span{
+
+    color:#94A3B8;
+
+    font-size:.95rem;
+
+}
+
+@media(max-width:992px){
+
+    .why-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .why-metrics{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .why-metrics{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+LIGHT THEME
+==================================================*/
+
+[data-theme="light"] .why-ia-one{
+
+    background:var(--section-surface-secondary);
+
+}
+
+[data-theme="light"] .comparison-card:not(.featured){
+
+    background:var(--section-panel);
+
+    border-color:var(--section-border);
+
+    box-shadow:var(--section-shadow);
+
+}
+
+[data-theme="light"] .comparison-card:not(.featured) .comparison-label{
+
+    color:var(--text-muted);
+
+}
+
+[data-theme="light"] .comparison-card:not(.featured) .comparison-list li{
+
+    color:var(--text-primary);
+
+    border-bottom-color:var(--section-border);
+
+}
+
+[data-theme="light"] .comparison-card:not(.featured) .comparison-footer{
+
+    color:var(--text-muted);
+
+}
+
+[data-theme="light"] .comparison-card.featured{
+
+    background:#2563EB;
+
+}
+
+[data-theme="light"] .comparison-card.featured .comparison-list li{
+
+    color:#F8FAFC;
+
+    border-bottom-color:rgba(255,255,255,.14);
+
+}
+
+[data-theme="light"] .why-metric{
+
+    background:var(--section-panel);
+
+    border-color:var(--section-border);
+
+    box-shadow:
+        0 12px 30px rgba(15,23,42,.045);
+
+}
+
+[data-theme="light"] .why-metric strong{
+
+    color:var(--text-primary);
+
+}
+
+[data-theme="light"] .why-metric span{
+
+    color:var(--text-muted);
+
+}

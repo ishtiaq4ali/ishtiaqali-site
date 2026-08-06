@@ -1,0 +1,632 @@
+/*==================================================
+SECURE & SCALE
+==================================================*/
+
+.secure-scale{
+
+    background:#0F172A;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.secure-layout{
+
+    display:grid;
+
+    grid-template-columns:.95fr 1.05fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+.secure-content{
+
+    max-width:560px;
+
+}
+
+.secure-list{
+
+    margin-top:2.5rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+.secure-item{
+
+    display:flex;
+
+    gap:1.25rem;
+
+    align-items:flex-start;
+
+}
+
+.secure-item>span{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.secure-item h3{
+
+    color:#fff;
+
+    margin-bottom:.5rem;
+
+}
+
+.secure-item p{
+
+    color:#94A3B8;
+
+    line-height:1.8;
+
+}
+
+/* Dashboard */
+
+.network-board{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:2rem;
+
+}
+
+.network-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:2rem;
+
+}
+
+.network-node{
+
+    padding:.8rem 1rem;
+
+    border-radius:12px;
+
+    background:#1E293B;
+
+    color:#fff;
+
+    font-size:.9rem;
+
+}
+
+.network-node.active{
+
+    background:#2563EB;
+
+}
+
+.network-line{
+
+    flex:1;
+
+    height:2px;
+
+    background:#334155;
+
+}
+
+.network-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.network-card{
+
+    background:#1E293B;
+
+    border-radius:16px;
+
+    padding:1.5rem;
+
+}
+
+.network-card h4{
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:.5rem;
+
+}
+
+.network-card span{
+
+    color:#94A3B8;
+
+}
+
+.technology-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+}
+
+.technology-stack span{
+
+    padding:.65rem 1rem;
+
+    border-radius:999px;
+
+    background:#1E293B;
+
+    color:#CBD5E1;
+
+    font-size:.85rem;
+
+}
+
+@media (max-width:992px){
+
+    .secure-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+SECURE & SCALE
+==================================================*/
+
+.secure-scale{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        180deg,
+        #0F172A 0%,
+        #101827 100%
+    );
+
+    padding-block:var(--section-padding);
+
+}
+
+.secure-scale .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/*==================================================
+LAYOUT
+==================================================*/
+
+.secure-layout{
+
+    display:grid;
+
+    grid-template-columns:.95fr 1.05fr;
+
+    gap:5rem;
+
+    align-items:center;
+
+}
+
+
+/*==================================================
+CONTENT
+==================================================*/
+
+.secure-content{
+
+    max-width:560px;
+
+}
+
+.secure-content .section-label{
+
+    margin-bottom:1rem;
+
+}
+
+.secure-content .section-title{
+
+    color:#fff;
+
+    margin-bottom:1.5rem;
+
+}
+
+.secure-content .section-description{
+
+    color:#94A3B8;
+
+    line-height:1.9;
+
+}
+
+
+/*==================================================
+FEATURE LIST
+==================================================*/
+
+.secure-list{
+
+    margin-top:2.5rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+.secure-item{
+
+    display:flex;
+
+    gap:1.25rem;
+
+    align-items:flex-start;
+
+}
+
+.secure-item>span{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:14px;
+
+    background:#2563EB;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.secure-item h3{
+
+    color:#fff;
+
+    margin-bottom:.5rem;
+
+    font-size:1.15rem;
+
+}
+
+.secure-item p{
+
+    color:#94A3B8;
+
+    line-height:1.75;
+
+}
+
+
+/*==================================================
+NETWORK BOARD
+==================================================*/
+
+.network-board{
+
+    background:#141E2E;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:2rem;
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.30);
+
+}
+
+.network-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.network-line{
+
+    flex:1;
+
+    height:2px;
+
+    background:#334155;
+
+}
+
+.network-node{
+
+    padding:.75rem 1rem;
+
+    border-radius:12px;
+
+    background:#1E293B;
+
+    color:#fff;
+
+    font-size:.85rem;
+
+    white-space:nowrap;
+
+}
+
+.network-node.active{
+
+    background:#2563EB;
+
+}
+
+
+/*==================================================
+GRID
+==================================================*/
+
+.network-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.network-card{
+
+    background:#1E293B;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:18px;
+
+    padding:1.4rem;
+
+    transition:.3s;
+
+}
+
+.network-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#2563EB;
+
+}
+
+.network-card h4{
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:.4rem;
+
+}
+
+.network-card span{
+
+    color:#94A3B8;
+
+}
+
+
+/*==================================================
+STACK
+==================================================*/
+
+.technology-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.8rem;
+
+}
+
+.technology-stack span{
+
+    padding:.75rem 1rem;
+
+    border-radius:999px;
+
+    background:#1E293B;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    color:#CBD5E1;
+
+    font-size:.85rem;
+
+    transition:.3s;
+
+}
+
+.technology-stack span:hover{
+
+    background:#2563EB;
+
+    border-color:#2563EB;
+
+    color:#fff;
+
+}
+
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:1100px){
+
+    .secure-layout{
+
+        grid-template-columns:1fr;
+
+        gap:3.5rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .network-top{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .network-line{
+
+        display:none;
+
+    }
+
+    .network-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+LIGHT THEME — INTENTIONAL DARK INFRASTRUCTURE SECTION
+==================================================*/
+
+[data-theme="light"] .secure-scale{
+
+    background:
+        linear-gradient(
+            180deg,
+            #0F172A 0%,
+            #101827 100%
+        );
+
+}
+
+[data-theme="light"] .secure-content .section-title,
+[data-theme="light"] .secure-item h3,
+[data-theme="light"] .network-card h4{
+
+    color:#F8FAFC;
+
+}
+
+[data-theme="light"] .secure-content .section-description,
+[data-theme="light"] .secure-item p,
+[data-theme="light"] .network-card span{
+
+    color:#94A3B8;
+
+}
+
+[data-theme="light"] .network-board{
+
+    background:#141E2E;
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+[data-theme="light"] .network-card,
+[data-theme="light"] .network-node,
+[data-theme="light"] .technology-stack span{
+
+    background:#1E293B;
+
+}
+
+[data-theme="light"] .network-card h4,
+[data-theme="light"] .network-node{
+
+    color:#F8FAFC;
+
+}
+
+[data-theme="light"] .technology-stack span{
+
+    color:#CBD5E1;
+
+}

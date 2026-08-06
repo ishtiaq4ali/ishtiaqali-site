@@ -1,0 +1,362 @@
+/*==================================================
+BUILD & OPERATE
+==================================================*/
+
+.build-operate{
+    position:relative;
+    padding:40px;
+}
+
+/*==================================================
+SECTION HEADER
+==================================================*/
+
+.build-operate .section-header{
+    max-width:760px;
+    margin:0 auto 4rem;
+    text-align:center;
+}
+
+.build-operate .section-description{
+    max-width:680px;
+    margin:1.5rem auto 0;
+}
+
+/*==================================================
+PLATFORM WORKSPACE
+==================================================*/
+
+.platform-workspace{
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:2rem;
+
+    margin-bottom:4rem;
+
+    align-items:stretch;
+
+}
+
+/*==================================================
+COMMON PANEL
+==================================================*/
+
+.platform-lifecycle,
+.services-panel{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+PANEL HEADING
+==================================================*/
+
+.workspace-heading{
+
+    padding:1.25rem 1.75rem;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--color-primary);
+
+    background:rgba(255,255,255,.02);
+
+}
+
+/*==================================================
+TIMELINE
+==================================================*/
+
+.timeline{
+
+    padding:2rem;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    min-height:58px;
+
+}
+
+.timeline-item:not(:last-child){
+
+    padding-bottom:1.25rem;
+
+}
+
+.timeline-item:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:8px;
+
+    top:22px;
+
+    width:2px;
+
+    height:100%;
+
+    background:rgba(99,102,241,.25);
+
+}
+
+.timeline-dot{
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:var(--color-primary);
+
+    flex-shrink:0;
+
+    box-shadow:0 0 0 5px rgba(99,102,241,.12);
+
+}
+
+.timeline-label{
+
+    font-weight:600;
+
+    color:var(--color-text);
+
+}
+
+/*==================================================
+SERVICES
+==================================================*/
+
+.service-item{
+
+    padding:1.75rem 2rem;
+
+}
+
+.service-item:not(:last-child){
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.service-item h3{
+
+    margin:0 0 .65rem;
+
+    font-size:1.2rem;
+
+}
+
+.service-item p{
+
+    color:var(--color-text-muted);
+
+    line-height:1.65;
+
+}
+
+.service-item:hover{
+
+    background:rgba(255,255,255,.02);
+
+}
+
+/*==================================================
+CAPABILITY GRID
+==================================================*/
+
+.capability-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.25rem;
+
+}
+
+.capability-card{
+
+    padding:1.35rem;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    transition:.3s ease;
+
+}
+
+.capability-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(99,102,241,.20);
+
+    background:rgba(255,255,255,.035);
+
+}
+
+.capability-card h4{
+
+    margin-bottom:.45rem;
+
+    font-size:1rem;
+
+}
+
+.capability-card p{
+
+    color:var(--color-text-muted);
+
+    line-height:1.55;
+
+    font-size:.92rem;
+
+}
+
+/*==================================================
+TABLET
+==================================================*/
+
+@media (max-width:991px){
+
+    .platform-workspace{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .capability-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media (max-width:767px){
+
+    .build-operate .section-header{
+
+        margin-bottom:3rem;
+
+    }
+
+    .timeline{
+
+        padding:1.5rem;
+
+    }
+
+    .service-item{
+
+        padding:1.5rem;
+
+    }
+
+    .capability-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+LIGHT THEME
+==================================================*/
+
+[data-theme="light"] .build-operate{
+
+    background:var(--section-surface-primary);
+
+}
+
+[data-theme="light"] .platform-lifecycle,
+[data-theme="light"] .services-panel{
+
+    background:var(--section-panel);
+
+    border-color:var(--section-border);
+
+    box-shadow:var(--section-shadow);
+
+}
+
+[data-theme="light"] .workspace-heading{
+
+    background:#F8FAFC;
+
+    border-bottom-color:var(--section-border);
+
+}
+
+[data-theme="light"] .service-item:not(:last-child){
+
+    border-bottom-color:var(--section-border);
+
+}
+
+[data-theme="light"] .service-item:hover{
+
+    background:#F8FAFC;
+
+}
+
+[data-theme="light"] .capability-card{
+
+    background:var(--section-panel);
+
+    border-color:var(--section-border);
+
+    box-shadow:
+        0 12px 30px rgba(15,23,42,.045);
+
+}
+
+[data-theme="light"] .capability-card:hover{
+
+    background:#FFFFFF;
+
+    border-color:rgba(91,108,255,.25);
+
+}
