@@ -37,7 +37,7 @@ HEADER v2.0
 .site-header.scrolled{
 
     padding-top:var(--space-2);
-
+ 
 }
 
 
@@ -508,13 +508,13 @@ SCROLLED STATE
 .site-header.scrolled{
 
     padding-top:var(--space-2);
-
+   
 }
 
 .site-header.scrolled .navbar{
 
     height:72px;
-
+ 
 }
 
 
@@ -760,6 +760,8 @@ MOBILE TOGGLE ACTIVE
 
     background:currentColor;
 
+    left: 13px;
+
     transition:
         transform var(--transition-base) var(--ease),
         opacity var(--transition-base) var(--ease);
@@ -805,4 +807,15 @@ ACTIVE
 
     transform:rotate(-45deg);
 
+}
+
+.site-header.scrolled .brand-name,
+.site-header.scrolled .brand-title,
+.site-header.scrolled .nav-menu a {
+    color: #ffffff;
+}
+
+.site-header.scrolled .nav-menu a:hover,
+.site-header.scrolled .nav-menu a.active {
+    color: #ffffff;
 }
