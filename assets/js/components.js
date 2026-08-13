@@ -350,6 +350,40 @@ updateThemeToggle(theme) {
 }
 
 /*==================================================
+ANALYTICS
+==================================================*/
+
+function loadGoogleAnalytics() {
+
+    // Prevent duplicate loading
+    if (window.__googleAnalyticsLoaded) {
+        return;
+    }
+
+    window.__googleAnalyticsLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        window.dataLayer.push(arguments);
+    }
+
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-B1S1PG5YJY');
+
+    const script = document.createElement('script');
+
+    script.async = true;
+    script.src =
+        'https://www.googletagmanager.com/gtag/js?id=G-B1S1PG5YJY';
+
+    document.head.appendChild(script);
+}
+
+/*==================================================
 BOOTSTRAP
 ==================================================*/
 
@@ -358,5 +392,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loader = new ComponentLoader();
 
     await loader.init();
+
+    loadGoogleAnalytics();
 
 });
