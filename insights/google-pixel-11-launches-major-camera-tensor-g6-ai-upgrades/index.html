@@ -1875,6 +1875,60 @@
         defer>
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const copyButton = document.querySelector(".article-copy-link");
+
+            if (!copyButton) return;
+
+            copyButton.addEventListener("click", async function () {
+
+                try {
+
+                    await navigator.clipboard.writeText(window.location.href);
+
+                    copyButton.setAttribute(
+                        "aria-label",
+                        "Article link copied"
+                    );
+
+                    copyButton.setAttribute(
+                        "title",
+                        "Link copied"
+                    );
+
+                    copyButton.classList.add("copied");
+
+                    setTimeout(function () {
+
+                        copyButton.setAttribute(
+                            "aria-label",
+                            "Copy article link"
+                        );
+
+                        copyButton.setAttribute(
+                            "title",
+                            "Copy link"
+                        );
+
+                        copyButton.classList.remove("copied");
+
+                    }, 1800);
+
+                } catch (error) {
+
+                    console.error(
+                        "Unable to copy article URL:",
+                        error
+                    );
+
+                }
+
+            });
+
+        });
+        </script>
 </body>
 
 </html>
