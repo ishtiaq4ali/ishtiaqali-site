@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Homepage -->
+
+    <url>
+        <loc>https://ishtiaqali.com/</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+
+    <!-- Main website pages -->
+
+    <url>
+        <loc>https://ishtiaqali.com/about</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+    <url>
+        <loc>https://ishtiaqali.com/contact</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+    <url>
+        <loc>https://ishtiaqali.com/solutions</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+    <url>
+        <loc>https://ishtiaqali.com/work</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+
+    <!-- Insights landing page -->
+
+    <url>
+        <loc>https://ishtiaqali.com/insights/</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+
+    <!-- Technology article -->
+
+    <url>
+        <loc>https://ishtiaqali.com/insights/google-pixel-11-launches-major-camera-tensor-g6-ai-upgrades</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+</urlset>
