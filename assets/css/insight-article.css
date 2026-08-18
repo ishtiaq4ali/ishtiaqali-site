@@ -538,260 +538,736 @@
     }
 }
 
-/*Read more widget */
-
-/* ==================================================
+/* =========================================================
    RELATED INSIGHTS
-================================================== */
+   ---------------------------------------------------------
+   IshtiaqAli.com
+   Theme-aware editorial recommendation component
+
+   Uses the existing design system only:
+   --surface-card
+   --surface-elevated
+   --text-primary
+   --text-secondary
+   --text-muted
+   --border-default
+   --brand-primary
+   --brand-accent
+   --shadow-sm
+   --shadow-md
+   --radius-lg
+   --space-*
+   --heading-*
+   --body-*
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
 
 .related-insights {
-    margin: 72px 0 64px;
-    padding-top: 48px;
-    border-top: 1px solid var(--border-color, #d9dde5);
+
+    margin-block:
+        var(--space-10)
+        var(--space-9);
+
+    padding-top:
+        var(--space-8);
+
+    border-top:
+        1px solid var(--border-default);
+
 }
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
 
 .related-insights-header {
-    margin-bottom: 28px;
+
+    margin-bottom:
+        var(--space-6);
+
 }
+
 
 .related-insights-header .section-label {
+
     display: inline-block;
-    margin-bottom: 12px;
 
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    margin-bottom:
+        var(--space-3);
 
-    color: var(--text-muted, #667085);
+    color:
+        var(--brand-accent);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--body-xs);
+
+    font-weight:
+        var(--weight-bold);
+
+    line-height:
+        1.3;
+
+    letter-spacing:
+        var(--tracking-wide);
+
+    text-transform:
+        uppercase;
+
 }
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
 
 .related-insights-header h2 {
-    margin: 0 0 8px;
 
-    font-size: clamp(28px, 4vw, 38px);
-    line-height: 1.12;
-    letter-spacing: -0.03em;
+    margin: 0 0 var(--space-2);
 
-    color: var(--heading-color, #111827);
+    color:
+        var(--text-primary);
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        var(--heading-2);
+
+    font-weight:
+        var(--weight-extra-bold);
+
+    line-height:
+        var(--leading-heading);
+
+    letter-spacing:
+        var(--tracking-tight);
+
 }
+
+
+/* =========================================================
+   SECTION DESCRIPTION
+   ========================================================= */
 
 .related-insights-header p {
-    max-width: 600px;
+
+    max-width:
+        60ch;
+
     margin: 0;
 
-    font-size: 15px;
-    line-height: 1.6;
+    color:
+        var(--text-secondary);
 
-    color: var(--text-muted, #667085);
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--body-md);
+
+    font-weight:
+        var(--weight-regular);
+
+    line-height:
+        var(--leading-body);
+
 }
 
 
-/* ==================================================
-   RELATED GRID
-================================================== */
+/* =========================================================
+   GRID
+   ========================================================= */
 
 .related-insights-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        var(--content-gap);
+
 }
 
 
-/* ==================================================
-   RELATED CARD
-================================================== */
+/* =========================================================
+   CARD
+   ========================================================= */
 
 .related-insight-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
     overflow: hidden;
 
-    border: 1px solid var(--border-color, #d9dde5);
-    border-radius: 18px;
+    border:
+        1px solid var(--border-default);
 
-    background: var(--card-background, #ffffff);
+    border-radius:
+        var(--radius-lg);
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-}
-
-.related-insight-card:hover {
-    transform: translateY(-4px);
+    background:
+        var(--surface-card);
 
     box-shadow:
-        0 16px 40px rgba(15, 23, 42, 0.10);
+        var(--shadow-sm);
 
-    border-color: var(--border-hover, #c7ccd6);
+    transition:
+        transform var(--transition-base) var(--ease),
+        border-color var(--transition-base) var(--ease),
+        box-shadow var(--transition-base) var(--ease);
+
 }
 
 
-/* ==================================================
-   IMAGE
-================================================== */
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.related-insight-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--brand-primary);
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+/* =========================================================
+   IMAGE LINK
+   ========================================================= */
 
 .related-insight-image-link {
-    display: block;
-    overflow: hidden;
 
-    aspect-ratio: 16 / 9;
-
-    background: #eef1f5;
-}
-
-.related-insight-image-link img {
     display: block;
 
     width: 100%;
+
+    overflow: hidden;
+
+    aspect-ratio:
+        16 / 9;
+
+    background:
+        var(--surface-elevated);
+
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.related-insight-image-link img {
+
+    display: block;
+
+    width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
-    transition: transform 0.45s ease;
+    transition:
+        transform var(--transition-slow) var(--ease);
+
 }
+
+
+/* =========================================================
+   IMAGE HOVER
+   ========================================================= */
 
 .related-insight-card:hover
 .related-insight-image-link img {
-    transform: scale(1.035);
+
+    transform:
+        scale(1.035);
+
 }
 
 
-/* ==================================================
-   CONTENT
-================================================== */
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
 
 .related-insight-content {
-    padding: 22px 22px 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding:
+        var(--space-5);
+
+    background:
+        var(--surface-card);
+
 }
+
+
+/* =========================================================
+   CARD META
+   ========================================================= */
 
 .related-insight-meta {
-    margin-bottom: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap:
+        var(--space-2);
+
+    margin-bottom:
+        var(--space-3);
+
 }
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
 
 .related-insight-category {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
 
-    color: var(--accent-color, #635bff);
+    display: inline-block;
+
+    color:
+        var(--brand-primary);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--body-xs);
+
+    font-weight:
+        var(--weight-semibold);
+
+    line-height:
+        1.3;
+
+    letter-spacing:
+        var(--tracking-wide);
+
+    text-transform:
+        uppercase;
+
 }
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.related-insight-date {
+
+    color:
+        var(--text-muted);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--body-xs);
+
+    font-weight:
+        var(--weight-medium);
+
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
 
 .related-insight-content h3 {
-    margin: 0 0 18px;
 
-    font-size: 20px;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
+    margin:
+        0 0 var(--space-5);
+
+    color:
+        var(--text-primary);
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+        var(--heading-4);
+
+    font-weight:
+        var(--weight-extra-bold);
+
+    line-height:
+        var(--leading-heading);
+
+    letter-spacing:
+        var(--tracking-tight);
+
 }
+
+
+/* =========================================================
+   CARD TITLE LINK
+   ========================================================= */
 
 .related-insight-content h3 a {
-    color: var(--heading-color, #111827);
-    text-decoration: none;
+
+    color:
+        var(--text-primary);
+
+    text-decoration:
+        none;
+
 }
+
+
+/* =========================================================
+   CARD TITLE HOVER
+   ========================================================= */
 
 .related-insight-content h3 a:hover {
-    color: var(--accent-color, #635bff);
+
+    color:
+        var(--brand-primary);
+
 }
 
 
-/* ==================================================
+/* =========================================================
+   OPTIONAL DESCRIPTION
+   ---------------------------------------------------------
+   If a related card contains a description, this will
+   automatically inherit the correct light/dark colors.
+   ========================================================= */
+
+.related-insight-description {
+
+    margin:
+        0 0 var(--space-5);
+
+    color:
+        var(--text-secondary);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--body-sm);
+
+    line-height:
+        var(--leading-body);
+
+}
+
+
+/* =========================================================
    READ LINK
-================================================== */
+   ========================================================= */
 
 .related-insight-read {
+
     display: inline-flex;
+
     align-items: center;
-    gap: 6px;
 
-    font-size: 13px;
-    font-weight: 600;
+    align-self: flex-start;
 
-    color: var(--heading-color, #111827);
+    gap:
+        var(--space-2);
 
-    text-decoration: none;
+    margin-top:
+        auto;
+
+    color:
+        var(--text-primary);
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        var(--body-sm);
+
+    font-weight:
+        var(--weight-semibold);
+
+    line-height:
+        1.4;
+
+    text-decoration:
+        none;
+
 }
+
+
+/* =========================================================
+   READ LINK HOVER
+   ========================================================= */
+
+.related-insight-read:hover {
+
+    color:
+        var(--brand-primary);
+
+}
+
+
+/* =========================================================
+   READ ARROW
+   ========================================================= */
 
 .related-insight-read span {
-    transition: transform 0.2s ease;
+
+    display: inline-block;
+
+    transition:
+        transform var(--transition-fast) var(--ease);
+
 }
+
+
+/* =========================================================
+   READ ARROW HOVER
+   ========================================================= */
 
 .related-insight-read:hover span {
-    transform: translateX(4px);
+
+    transform:
+        translateX(4px);
+
 }
 
 
-/* ==================================================
-   TABLET
-================================================== */
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
-@media (max-width: 900px) {
+.related-insight-image-link:focus-visible,
+.related-insight-content h3 a:focus-visible,
+.related-insight-read:focus-visible {
+
+    outline:
+        2px solid var(--brand-primary);
+
+    outline-offset:
+        4px;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
 
     .related-insights-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
     }
 
 }
 
 
-/* ==================================================
+/* =========================================================
    MOBILE
-================================================== */
+   ========================================================= */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 
     .related-insights {
-        margin: 56px 0 48px;
-        padding-top: 36px;
+
+        margin-block:
+            var(--space-9)
+            var(--space-8);
+
+        padding-top:
+            var(--space-7);
+
     }
+
 
     .related-insights-header {
-        margin-bottom: 22px;
+
+        margin-bottom:
+            var(--space-5);
+
     }
+
 
     .related-insights-header h2 {
-        font-size: 28px;
+
+        font-size:
+            var(--heading-3);
+
     }
+
 
     .related-insights-header p {
-        font-size: 14px;
+
+        font-size:
+            var(--body-sm);
+
     }
+
 
     .related-insights-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            var(--space-5);
+
     }
+
 
     .related-insight-content {
-        padding: 18px 18px 20px;
+
+        padding:
+            var(--space-5);
+
     }
 
+
     .related-insight-content h3 {
-        font-size: 18px;
+
+        font-size:
+            var(--heading-4);
+
     }
 
 }
 
 
-/* ==================================================
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .related-insights {
+
+        margin-block:
+            var(--space-8)
+            var(--space-7);
+
+        padding-top:
+            var(--space-6);
+
+    }
+
+
+    .related-insights-header .section-label {
+
+        margin-bottom:
+            var(--space-2);
+
+    }
+
+
+    .related-insights-header h2 {
+
+        font-size:
+            1.75rem;
+
+    }
+
+
+    .related-insight-content {
+
+        padding:
+            var(--space-4);
+
+    }
+
+
+    .related-insight-meta {
+
+        margin-bottom:
+            var(--space-2);
+
+    }
+
+
+    .related-insight-content h3 {
+
+        margin-bottom:
+            var(--space-4);
+
+        font-size:
+            1.25rem;
+
+    }
+
+}
+
+
+/* =========================================================
    REDUCED MOTION
-================================================== */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     .related-insight-card,
     .related-insight-image-link img,
     .related-insight-read span {
-        transition: none;
+
+        transition:
+            none;
+
     }
 
+
     .related-insight-card:hover {
-        transform: none;
+
+        transform:
+            none;
+
     }
+
 
     .related-insight-card:hover
     .related-insight-image-link img {
-        transform: none;
+
+        transform:
+            none;
+
+    }
+
+
+    .related-insight-read:hover span {
+
+        transform:
+            none;
+
     }
 
 }
